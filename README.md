@@ -1,5 +1,99 @@
-# Cara Menjalankan
+# Cara Menjalankan Project
+Ikuti langkah-langkah berikut untuk menjalankan project ini di local environment.
 
+---
+
+## 1. Clone Repository
+
+    git clone https://github.com/username/nama-repo.git
+    cd nama-repo
+
+---
+
+## 2. Setup Backend
+
+Masuk ke folder backend:
+
+    cd backend
+
+Install dependencies:
+
+    npm install
+
+### 2.1 Konfigurasi Environment Variables
+
+Buat file `.env` di dalam folder `backend/`, lalu isi dengan:
+
+    PORT=5000
+    MONGO_URI=your_database_url
+    JWT_SECRET=your_secret_key
+    ARCJET_KEY=your_arcjet_key
+
+### 2.2 Menjalankan Backend
+
+    npm run dev
+
+Jika berhasil, server akan berjalan di:
+http://localhost:5000
+
+---
+
+## 3. Setup Frontend
+
+Buka terminal baru, lalu masuk ke folder frontend:
+
+    cd frontend
+
+Install dependencies:
+
+    npm install
+
+### 3.1 Menjalankan Frontend
+
+    npm run dev
+
+Jika berhasil, aplikasi akan berjalan di:
+http://localhost:5173
+
+---
+
+## 4. Akses Aplikasi
+
+- Frontend: http://localhost:5173  
+- Backend: http://localhost:5000  
+
+---
+
+## 5. Login / Register
+
+1. Buka aplikasi di browser  
+2. Register akun baru  
+3. Login menggunakan akun tersebut  
+4. Sistem akan menyimpan token JWT untuk autentikasi  
+
+---
+
+## 6. Catatan Penting
+
+- Pastikan sudah menginstall:
+  - Node.js (disarankan versi 18+)
+  - npm / yarn
+- Jangan commit file `.env` ke repository
+- Pastikan MongoDB sudah berjalan (local / cloud seperti MongoDB Atlas)
+
+---
+
+## 7. Troubleshooting
+
+### Port sudah digunakan
+Ganti PORT di file `.env`
+
+### Gagal koneksi database
+- Cek `MONGO_URI`
+- Pastikan database aktif
+
+### JWT error
+- Pastikan `JWT_SECRET` sudah terisi
 # Tech Stack
 ![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=visualstudiocode&logoColor=white)
 [![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white)](#)
@@ -26,4 +120,10 @@
 <img width="445" height="800" alt="Screenshot 2026-04-09 170417" src="https://github.com/user-attachments/assets/a072e813-f11f-4f17-bf9a-3766191481c9" />
 <img width="447" height="802" alt="Screenshot 2026-04-09 170400" src="https://github.com/user-attachments/assets/84d0a2ed-2262-4e1b-85d4-ffcfc29f1ab5" />
 
-# Penjelasan
+# Tentang Project
+
+Project ini merupakan aplikasi berbasis web yang dibangun menggunakan arsitektur client-server, dengan tujuan untuk menyediakan sistem autentikasi yang aman dan terstruktur. Aplikasi ini memungkinkan pengguna untuk melakukan proses registrasi dan login, di mana data pengguna akan dikelola oleh backend dan disimpan di database. Sistem autentikasi menggunakan JSON Web Token (JWT) untuk memastikan setiap request yang dilakukan user dapat diverifikasi dengan aman.
+
+Pada sisi frontend, aplikasi dikembangkan menggunakan React untuk memberikan pengalaman pengguna yang interaktif dan responsif. Frontend berkomunikasi dengan backend melalui API yang dibangun menggunakan Node.js dan Express. Backend bertanggung jawab dalam menangani logika bisnis, validasi data, serta proses autentikasi dan otorisasi pengguna sebelum mengakses fitur tertentu dalam aplikasi.
+
+Secara keseluruhan, project ini dirancang sebagai implementasi dasar dari sistem autentikasi modern yang umum digunakan dalam pengembangan aplikasi web. Selain itu, project ini juga dapat dikembangkan lebih lanjut dengan menambahkan fitur seperti manajemen user, role-based access control, maupun integrasi dengan layanan pihak ketiga untuk meningkatkan fungsionalitas aplikasi.
